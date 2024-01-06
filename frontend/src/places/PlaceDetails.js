@@ -101,7 +101,19 @@ function PlaceDetails() {
 		})
 	}
 
-
+	if (currentUser?.role === 'admin') {
+		placeActions = (
+			<>
+				<a className="btn btn-warning" onClick={editPlace}>
+					Edit
+				</a>
+				<button type="submit" className="btn btn-danger" onClick={deletePlace}>
+					Delete
+				</button>
+			</>
+		)
+		}
+		
 	return (
 		<main>
 			<div className="row">
@@ -152,3 +164,10 @@ function PlaceDetails() {
 }
 
 export default PlaceDetails
+
+  
+
+
+let placeActions = null
+
+
